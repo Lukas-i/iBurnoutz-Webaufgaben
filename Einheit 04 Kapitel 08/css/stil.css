@@ -67,20 +67,22 @@ dt{
 dd::before{
     content: '';
     padding: 10px;
-    background-image: url('https://www.flaticon.com/svg/vstatic/svg/4055/4055036.svg?token=exp=1611656356~hmac=78e9ab41b281b9143f11624feea3eb2b');
+    background-image: url('https://www.flaticon.com/svg/vstatic/svg/1998/1998657.svg?token=exp=1611664177~hmac=6277c0724787ae46af69e1885b82805f');
     background-size: contain;
+    margin-right: 5px;
     background-repeat: no-repeat;
+}
+dd{
+    padding-right: 40px;
 }
 
 .flex{
-    flex-wrap: wrap;
-    max-width: 80em;
     margin: 3em auto;
 }
 .flex div{
     text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .flex img{
     height: 199px;
