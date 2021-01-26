@@ -1,0 +1,148 @@
+body{
+    background-color: #ffffff;
+}
+header{
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://www.oebb.at/thumbnails/www.nightjet.com/.imaging/default/dam/reiseportal/hero-teaser-2560x800/oebb-plus/wien-tiergarten-schoenbrunn.jpg/jcr:content.jpg?t=1542359827013&scale=1.0');
+    height: 150px;
+    padding-top: 35px;
+    
+}
+
+h1{
+    font-size: 35px;
+    background-color: rgba(0, 255, 21, 0.3); 
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+h1::first-letter{
+    font-style: italic;
+}
+
+.menu{
+    height: 33px;
+    background-color: #ffffff;
+    margin-top: 120px;
+    
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    background-color: rgba(0, 255, 21, 0.3);
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+nav a{
+    text-decoration: none;
+    display: block;
+    margin-left: 15px;
+    color: black;
+    font-size: 25px;
+}
+.current{
+    text-decoration: underline;
+}
+a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+article{
+    text-align: center;
+}
+video{
+    margin-top: 35px;
+    width: 600px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78); 
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78);
+}
+dt{
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+dd::before{
+    content: url('https://www.flaticon.com/free-icon/panda_2419531?term=panda&page=1&position=58&page=1&position=58&related_id=2419531&origin=search');
+    margin-right: 5px;
+}
+
+.flex{
+    max-width: 80em;
+    margin: 3em auto;
+}
+.flex div{
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.flex img{
+    height: 199px;
+    width: 299px;
+}
+.divTable{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+table{
+    width: 100%;   
+    margin-top: 45px;
+    background-color: rgba(0, 255, 21, 0.3);
+    border: 1.5px solid black;
+    border-radius: 5px;
+    
+}
+tr:hover{
+    font-weight: bold; 
+}
+
+.test{
+    font-size: 25px;
+    padding: 15px;
+}
+th{
+    font-size: 18px;
+}
+form{
+    display: block;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 10px;
+    margin-top: 45px;
+}
+.custom >*{
+    flex-basis: 30%;
+}
+.custom { 
+    width: 100%;   
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+
+}
+.formbutton{
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+.formbutton :last-child{
+    margin-right: 35px;
+}
+.formbutton :first-child{
+    margin-right: 1px;
+}
+
+@media only screen and (min-width: 730px) {
+    body {
+        width: 95%;
+        margin: 0px auto;
+    }
+    .flex{
+        width: 50%;
+        float: left;
+        
+    }
+}
