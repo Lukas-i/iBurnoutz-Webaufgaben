@@ -16,7 +16,7 @@ header{
 
 h1{
     font-size: 35px;
-    background-color: #4EEB15; 
+    background-color:rgba(78,235,21, 0.5); 
     border: 1.5px solid black;
     border-radius: 5px;
 }
@@ -35,7 +35,7 @@ nav ul{
     display: flex;
     list-style: none;
     justify-content: space-around;
-    background-color: #4EEB15;
+    background-color: rgba(78,235,21, 0.5);
     border: 1.5px solid black;
     border-radius: 5px;
 }
@@ -59,7 +59,8 @@ article{
 }
 video{
     margin-top: 35px;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin-bottom: 30px;
     -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78); 
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78);
@@ -71,7 +72,7 @@ dt{
 dd::before{
     content: '';
     padding: 10px;
-    background-image: url('https://www.flaticon.com/svg/vstatic/svg/1998/1998657.svg?token=exp=1611664177~hmac=6277c0724787ae46af69e1885b82805f');
+    background-image: url('../img/panda.png');
     background-size: contain;
     margin-right: 5px;
     background-repeat: no-repeat;
@@ -82,15 +83,26 @@ dd{
 
 .flex{
     margin: 3em auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
 }
-.flex div{
+
+.flexitem{
+    flex: 0 0 45%;
+    background-color: rgba(78,235,21, 0.5);
+    border: 1.5px solid black;
     text-align: center;
     padding-left: 5px;
     padding-right: 5px;
+    margin-bottom: 15px;
+    
 }
 .flex img{
-    height: 199px;
-    width: 299px;
+    max-width: 299px;
+    width: 100%;
 }
 .divTable{
     margin-left: 3%;
@@ -99,7 +111,7 @@ dd{
 table{
     width: 100%;   
     margin-top: 45px;
-    background-color: #4EEB15;
+    background-color: rgba(78,235,21, 0.5);
     border: 1.5px solid black;
     border-radius: 5px;
     
@@ -111,9 +123,11 @@ tr:hover{
 .test{
     font-size: 25px;
     padding: 15px;
+    text-align: center;
 }
 th{
     font-size: 18px;
+    text-align: left;
 }
 form{
     display: block;
@@ -150,10 +164,5 @@ form{
     body {
         width: 95%;
         margin: 0px auto;
-    }
-    .flex{
-        width: 50%;
-        float: left;
-        
     }
 }
