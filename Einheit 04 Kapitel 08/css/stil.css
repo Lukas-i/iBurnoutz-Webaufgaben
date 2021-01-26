@@ -1,5 +1,10 @@
 body{
     background-color: #ffffff;
+    margin-top: 0;
+    background-image: url('https://1000things.b-cdn.net/wp-content/uploads/2020/07/Schloss_Schoenbrunn__c__Schloss_Schoenbrunn_Kultur-_und_Betriebsges.m.b.H._Severin_Wurnig__3_.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 header{
     background-size: cover;
@@ -7,12 +12,11 @@ header{
     background-image: url('https://www.oebb.at/thumbnails/www.nightjet.com/.imaging/default/dam/reiseportal/hero-teaser-2560x800/oebb-plus/wien-tiergarten-schoenbrunn.jpg/jcr:content.jpg?t=1542359827013&scale=1.0');
     height: 150px;
     padding-top: 35px;
-    
 }
 
 h1{
     font-size: 35px;
-    background-color: rgba(0, 255, 21, 0.3); 
+    background-color: #4EEB15; 
     border: 1.5px solid black;
     border-radius: 5px;
 }
@@ -31,7 +35,7 @@ nav ul{
     display: flex;
     list-style: none;
     justify-content: space-around;
-    background-color: rgba(0, 255, 21, 0.3);
+    background-color: #4EEB15;
     border: 1.5px solid black;
     border-radius: 5px;
 }
@@ -73,7 +77,7 @@ dd::before{
     background-repeat: no-repeat;
 }
 dd{
-    padding-right: 40px;
+    margin-right: 40px;
 }
 
 .flex{
@@ -95,7 +99,7 @@ dd{
 table{
     width: 100%;   
     margin-top: 45px;
-    background-color: rgba(0, 255, 21, 0.3);
+    background-color: #4EEB15;
     border: 1.5px solid black;
     border-radius: 5px;
     
