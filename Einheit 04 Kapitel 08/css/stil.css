@@ -18,6 +18,7 @@ h1{
 }
 h1::first-letter{
     font-style: italic;
+    font-size: 40px;
 }
 
 .menu{
@@ -64,11 +65,15 @@ dt{
     margin-bottom: 15px;
 }
 dd::before{
-    content: url('https://www.flaticon.com/free-icon/panda_2419531?term=panda&page=1&position=58&page=1&position=58&related_id=2419531&origin=search');
-    margin-right: 5px;
+    content: '';
+    padding: 10px;
+    background-image: url('https://www.flaticon.com/svg/vstatic/svg/4055/4055036.svg?token=exp=1611656356~hmac=78e9ab41b281b9143f11624feea3eb2b');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .flex{
+    flex-wrap: wrap;
     max-width: 80em;
     margin: 3em auto;
 }
