@@ -1,12 +1,14 @@
 body{
     margin-top: 0;
     background-color:#79d4d9 ;
+    font-family: 'Oswald', sans-serif;
+    
 }
 header{
     background-size: cover;
     background-position: center;
     background-image: url('https://www.oebb.at/thumbnails/www.nightjet.com/.imaging/default/dam/reiseportal/hero-teaser-2560x800/oebb-plus/wien-tiergarten-schoenbrunn.jpg/jcr:content.jpg?t=1542359827013&scale=1.0');
-    height: 60vh;
+    min-height: 60vh;
     padding-top: 35px;
     display: flex;
     align-items: flex-end;
@@ -15,13 +17,16 @@ header{
 }
 
 h1{
+    font-family: 'Caveat', cursive;
     font-size: 35px;
     background-color:#9eccd5  ; 
     border: 1.5px solid black;
     border-radius: 5px;
+    text-shadow: 3px 3px 4px #777
 }
 h1::first-letter{
     font-style: italic;
+    color: #ffffff;
     font-size: 40px;
 }
 
@@ -45,11 +50,11 @@ nav a{
     font-size: 25px;
 }
 .current{
-    text-decoration: underline;
+    text-decoration: overline;
 }
 a:hover{
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: overline;
 }
 
 article{
@@ -69,11 +74,13 @@ video{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
-    border: 3px inset black;
+    border: 5px inset black;
     background-position: center;
 }
 
 dt{
+    font-family: 'Caveat', cursive;
+    text-shadow: 3px 3px 4px #777;
     font-size: 25px;
     margin-bottom: 15px;
 }
@@ -84,6 +91,7 @@ dd::before{
     background-size: contain;
     margin-right: 5px;
     background-repeat: no-repeat;
+    background-position: left center;
 }
 dd{
     margin-right: 40px;
@@ -103,15 +111,60 @@ dd{
     background-color:#9eccd5  ;
     border: 1.5px solid black;
     text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 20px;
     margin-bottom: 20px;
     
 }
 .flex img{
     max-width: 299px;
     width: 100%;
+    flex-wrap: wrap;
 }
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+.socialList{
+    padding-left: 0px;
+    text-align: left;
+}
+.socialList .facebook{
+    background-image: url(../img/FB.svg);
+    list-style-type: none;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-size: 20px auto;
+    background-position: left center;
+    margin-bottom: 2px;
+}
+.socialList .instagram{
+    background-image: url(../img/IGsvg.svg);
+    list-style-type: none;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-size: 20px auto;
+    background-position: left center;
+    margin-bottom: 2px;
+}
+.socialList .youtube{
+    background-image: url(../img/YT.svg);
+    list-style-type: none;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-size: 20px auto;
+    background-position: left center;
+}
+.socialList li:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+footer{
+    text-align: center;
+}
+
+
 .divTable{
     margin: 10% 3%;
     background-color: #9eccd5 ;
@@ -121,10 +174,9 @@ table{
     width: 100%;     
     border: 1.5px solid black;
     border-radius: 5px;
-    
 }
 tr:hover{
-    font-weight: bold; 
+    text-decoration: underline;
 }
 
 .test{
@@ -152,6 +204,8 @@ form{
     margin-bottom: 10%;
     background-color: #ffffff;
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78);
+    font-variant: small-caps;
+    font-weight: bold;
 }
 .custom >*{
     flex-basis: 30%;
@@ -191,7 +245,7 @@ fieldset{
 .formbutton button:hover{
     background-color: green;
     -webkit-box-shadow: 0px 0px 5px 10px #000000; 
-box-shadow: 0px 0px 5px 10px #000000;
+    box-shadow: 0px 0px 5px 10px #000000;
 }
 
 @media only screen and (min-width: 730px) {
