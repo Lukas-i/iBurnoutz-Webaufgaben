@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Schere, Stein, Papier</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <style>
+            .bg-custom{
+                background-image: url(./img/Background.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            body,main{
+                min-height: 100vh;
+            }
+            
+        </style>
+    </head>
+    <body>
+    <main class="bg-custom">
+        <h1 class="text-white text-center py-5">Schere, Stein Papier</h1>
+        <article class="container bg-light p-4">
+            <section class="row">
+                <button class="col text-center" type="button" onclick="play(2)">
+                    <img class="img-fluid w-50 bg-transparent border-0" src="img/Schere.png" alt="Schere">
+                </button>
+                <button class="col text-center " type="button" onclick="play(3)">
+                    <img class="img-fluid w-50 bg-transparent border-0" src="img/Papier.png" alt="Papier">
+                </button>
+                <button class="col text-center" type="button" onclick="play(1)">
+                    <img class="img-fluid w-50 bg-transparent border-0" src="img/Stein.svg" alt="Stein">
+                </button>
+            </section>
+        </article>
+
+        <article class="container bg-light p-4">
+            <h2 class="text-center px-3">Runde: <span id="outputRound">0</span></h2>
+            <p id="whoWins" class="text-center"></p>
+            <p id="outputScore" class="text-center"></p>
+            <div class="row align-items-center">
+                <div class="col text-center" id="outputChoiceUser"></div>
+                <div class="col text-center" id="outputChoiceComp"></div>
+            </div>
+            <h3 id="infoGame" class="text-center px-3"></h3>
+        </article>
+    </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    
+    <script>
+        "use strict";
+        let round = 0;
+        let countUserWin = 0;
+        let countCompWin = 0;
+        let end = 1;
+        let mouseoverElemente = document.getElementsByClassName('w-50');
+        listener();
+        
+        
+    /*
+    * Stein = 1
+    * Schere = 2
+    * Papier = 3
+    * Schere - Papier = 2
+    * Papier - Stein = 3
+    * Stein - Schere = 1
+    * 
+    * User   - Comp
+    * 2      - 3      -> 2 (User)    * Schere - Papier
+    * 1      - 2      -> 1 (User)    * Stein  - Schere
+    * 3      - 1      -> 3 (User)    * Papier - Stein
+    * 
+    * 2      - 1      -> 1 (Comp)    * Schere - Stein
+    * 1      - 3      -> 3 (Comp)    * Stein  - Papier
+    * 3      - 2      -> 2 (Comp)    * Papier - Schere
+    * 
+    * */
+
+        function play (userChoice) {
+            
+            console.log('Userwahl: '+ userChoice);
+            // Math.floor(Math.random() * (max - min +1)) + min;
+            let compChoice = Math.floor(Math.random() * (3 - 1 + 1))+1;
+            console.log('Comp: '+compChoice);
+            // Runde um 1 erhöhen;
+            round++;
+            document.getElementById('outputRound').innerText = round;
+            // === -> Typ und Wert abfrage
+            // == -> Wertüberprüfung
+            if(
+                userChoice == 2 && compChoice == 3 ||
+                userChoice == 1 && compChoice == 2 ||
+                userChoice == 3 && compChoice == 1 
+            ) {
+                // user gewinnt Runde
+                console.log('User gewinnt Runde');
+                userWin();
+                icon(userChoice, 'User');
+                icon(compChoice, 'Comp');
+            }else if( 
+                userChoice == 2 && compChoice == 1 ||
+                userChoice == 1 && compChoice == 3 ||
+                userChoice == 3 && compChoice == 2 
+            ) {
+                // Computer hat gewonnen
+                console.log('Computer gewinnt Runde');
+                compWin();
+                icon(userChoice, 'User');
+                icon(compChoice, 'Comp');
+            }else{
+                // Draw
+                console.log('Unentschieden');
+                draw();
+                icon(userChoice, 'User');
+                icon(compChoice, 'Comp');   
+            }
+            if(countUserWin === 3 || countCompWin === 3){
+                // Spiel beenden
+                const button = document.querySelectorAll('button');
+                for(let result of button){
+                    result.disabled = true;
+                }
+                end = 2;
+                if (end === 2){
+                    test();
+                }
+                if (countUserWin>countCompWin){
+                    //User hat das Spiel gewonnen
+                    infoGame.innerText = "User hat das Spiel gewonnen";                    
+                    
+                }else{
+                    //Computer hat das Spiel gewonnen
+                    infoGame.innerText = "Computer hat das Spiel gewonnen";
+                }
+            }
+        }
+
+        // Funktion wenn der User gewinnt
+        function userWin() {
+            countUserWin++;
+            output()
+            document.getElementById('whoWins').innerText = 'User gewinnt Runde';
+        }
+        // Funktion wenn der Commputer gewinnt
+        function compWin() {
+            countCompWin++;
+            output() 
+            document.getElementById('whoWins').innerText = 'Computer gewinnt Runde';
+        }
+        // Funktion für den Score
+        function output(){
+            outputScore.innerText = countUserWin + " : "+ countCompWin;
+        }
+
+        // Funktion unentschieden
+        function draw(){
+            document.getElementById('whoWins').innerText = 'Unentschieden';
+        }
+
+        //Funktion um Icons anzeigen zu lassen wer was getippt hat
+        function icon(Choice, x){
+            let insertIcon = document.getElementById('outputChoice' + x);
+            switch(Choice){
+                case 1: 
+                    insertIcon.innerHTML = '<img class="img-fluid w-25 bg-transparent border-0" src="img/Stein.svg" alt="Stein">';
+                    break;
+                case 2: 
+                    insertIcon.innerHTML = '<img class="img-fluid w-25 bg-transparent border-0" src="img/Schere.png" alt="Schere">';
+                    break;
+                case 3: 
+                    insertIcon.innerHTML = '<img class="img-fluid w-25 bg-transparent border-0" src="img/Papier.png" alt="Papier">';
+                    break;
+            }
+        }
+
+        //Funktion für fancy stuff - kommt zum Schluss
+        function listener(){
+            for(let i = 0; i < mouseoverElemente.length; i++){
+                mouseoverElemente[i].addEventListener("mouseover", function(event){
+                    event.target.style.transform = "rotate(15deg)";
+                    setTimeout(function(){
+                        event.target.style.transform = "";
+                    },500)
+                }, false);
+            }
+        }
+
+        -
+    
+
+    </script>
+    </body>
+</html>

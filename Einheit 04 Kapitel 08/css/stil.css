@@ -14,6 +14,7 @@ header{
     align-items: flex-end;
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
+    
 }
 
 h1{
@@ -21,8 +22,9 @@ h1{
     font-size: 35px;
     background-color:#9eccd5  ; 
     border: 1.5px solid black;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78);
     border-radius: 5px;
-    text-shadow: 3px 3px 4px #777
+    text-shadow: 3px 3px 4px #777;
 }
 h1::first-letter{
     font-style: italic;
@@ -96,20 +98,18 @@ dd::before{
 dd{
     margin-right: 40px;
 }
-
 .flex{
-    margin: 3em auto;
+    margin: 4% auto;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;  
-    
+    justify-content: space-around;     
 }
-
 .flexitem{
     flex: 0 0 45%;
     background-color:#9eccd5  ;
     border: 1.5px solid black;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78);
     text-align: center;
     padding: 20px;
     margin-bottom: 20px;
@@ -120,13 +120,9 @@ dd{
     width: 100%;
     flex-wrap: wrap;
 }
-.social{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-}
 .socialList{
+    display: flex;
+    justify-content: center;
     padding-left: 0px;
     text-align: left;
 }
@@ -137,7 +133,7 @@ dd{
     padding-left: 25px;
     background-size: 20px auto;
     background-position: left center;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 .socialList .instagram{
     background-image: url(../img/IGsvg.svg);
@@ -146,7 +142,9 @@ dd{
     padding-left: 25px;
     background-size: 20px auto;
     background-position: left center;
-    margin-bottom: 2px;
+    margin-bottom: 3px; 
+    margin-left: 6%;
+    margin-right: 6%;
 }
 .socialList .youtube{
     background-image: url(../img/YT.svg);
@@ -155,6 +153,7 @@ dd{
     padding-left: 25px;
     background-size: 20px auto;
     background-position: left center;
+    margin-bottom: 3px;
 }
 .socialList li:hover{
     font-weight: bold;
@@ -163,12 +162,12 @@ dd{
 footer{
     text-align: center;
 }
-
-
 .divTable{
     margin: 10% 3%;
     background-color: #9eccd5 ;
     border-radius: 1%;
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78);
+    
 }
 table{
     width: 100%;     
@@ -215,7 +214,6 @@ form{
     display: flex;
     justify-content: space-around;
     padding: 5px;
-
 }
 .custom:focus-within{
     background-color:#9eccd5 ;
@@ -229,7 +227,6 @@ fieldset{
     display: flex;
     justify-content: flex-end;
     margin-top: 5px;
-    
 }
 .formbutton :last-child{
     margin-right: 35px;
@@ -243,10 +240,26 @@ fieldset{
     padding: 10px;
 }
 .formbutton button:hover{
-    background-color: green;
-    -webkit-box-shadow: 0px 0px 5px 10px #000000; 
-    box-shadow: 0px 0px 5px 10px #000000;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+    -webkit-box-shadow: 0px 0px 2px 2px #000000; 
+    box-shadow: 0px 0px 2px 2px #000000;
 }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
 
 @media only screen and (min-width: 730px) {
     body {
