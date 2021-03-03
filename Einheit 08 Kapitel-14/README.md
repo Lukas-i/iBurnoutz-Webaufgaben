@@ -10,3 +10,5 @@ Entwerfe eine Werbeseite für ein Produkt deiner Wahl.
 - Achte auf die Browseruntersützung und das die Seite responsive ist.
 - Nutze Mediaqueries um deine Seite responsive zu gestalten
 
+
+

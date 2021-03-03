@@ -2,6 +2,7 @@ body{
     margin-top: 0;
     background-color:#79d4d9 ;
     font-family: 'Oswald', sans-serif;
+    font-size: calc(16px + (20  - 16) * ((100vw - 320px) / (1600 - 320)));
     
 }
 header{
@@ -11,10 +12,7 @@ header{
     min-height: 60vh;
     padding-top: 35px;
     display: flex;
-    align-items: flex-end;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-    
+    align-items: flex-end;    
 }
 
 h1{
@@ -23,7 +21,6 @@ h1{
     background-color:#9eccd5  ; 
     border: 1.5px solid black;
     box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.78);
-    border-radius: 5px;
     text-shadow: 3px 3px 4px #777;
 }
 h1::first-letter{
@@ -41,7 +38,6 @@ nav ul{
     justify-content: space-around;
     background-color:#9eccd5 ;
     border: 1.5px solid black;
-    border-radius: 5px;
     margin: 0;
 }
 nav a{
@@ -57,6 +53,9 @@ nav a{
 a:hover{
     font-weight: bold;
     text-decoration: overline;
+    transition-property: width;
+    transition-timing-function: linear;
+    transition-delay: 2s;   
 }
 
 article{
@@ -98,6 +97,14 @@ dd::before{
 dd{
     margin-right: 40px;
 }
+.fisch{
+    transition-property: width;
+    transition-duration: 2s;
+}
+.fisch:hover{
+    width: 150px;
+}
+
 .flex{
     margin: 4% auto;
     text-align: center;
@@ -172,7 +179,9 @@ footer{
 table{
     width: 100%;     
     border: 1.5px solid black;
-    border-radius: 5px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.8130602582830007) 0%, 
+    rgba(158,204,213,1) 40%, rgba(119,207,210,0.8690826672465861) 73%);
 }
 tr:hover{
     text-decoration: underline;
@@ -184,7 +193,7 @@ tr:hover{
     text-align: center;
 }
 th{
-    font-size: 18px;
+    font-size: 20px;
     text-align: left;
 }
 
@@ -261,9 +270,16 @@ fieldset{
   }
 
 
-@media only screen and (min-width: 730px) {
+/*@media screen and (min-width: 730px) {
     body {
-        width: 95%;
-        margin: 0px auto;
+        padding: 2.5%;
+        font-size: 26px;
     }
-}
+    dd {
+        font-size: 26px;
+    }
+    nav ul a{
+        font-size: 2rem;
+    }
+}*/
+
